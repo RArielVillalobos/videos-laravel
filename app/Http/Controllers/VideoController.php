@@ -138,13 +138,23 @@ class VideoController extends Controller
      public function edit($id){
         $video=Video::findOrFail($id);
 
+
         return view('video.edit',['video'=>$video]);
 
      }
 
-     public function update(Request $request){
+     public function update($id,Request $request){
         $data=$request->all();
-        dd($data);
+         $video=Video::findOrFail($id);
+         dd($video->id);
+         $this->validate($request,[
+            'titulo'=>'required',
+             'descripcion'=>'required',
+         ]);
+
+
+
+        // $video
      }
 
 

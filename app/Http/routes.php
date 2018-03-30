@@ -29,4 +29,4 @@ Route::post('/comment',['as'=>'comment','middleware'=>'auth','uses'=>'CommentCon
 Route::get('/delete/{id}',['as'=>'delete','middleware'=>'auth','uses'=>'CommentController@delete']);
 //editar video
 Route::get('/edit/{id}',['as'=>'edit','middleware'=>'auth','uses'=>'VideoController@edit']);
-Route::post('update',['as'=>'update','middleware'=>'auth','uses'=>'VideoController@update']);
+Route::post('update/{id}',['as'=>'update','middleware'=>'auth','uses'=>'VideoController@update']);

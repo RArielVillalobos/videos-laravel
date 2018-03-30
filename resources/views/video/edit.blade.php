@@ -6,10 +6,10 @@
             <h3>Editar Video {{$video->title}}</h3>
             <hr>
 
-            <form action="{{url('update')}}" method="post" enctype="multipart/form-data" class="col lg-7">
+            <form action="{{url('update',$video->id)}}" method="post" enctype="multipart/form-data" class="col lg-7">
 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="video_id" value="{{$video->id}}">
+
                 <div class="form-group">
                     @if($errors->any())
                         <div class="alert alert-danger">
