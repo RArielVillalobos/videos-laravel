@@ -37,8 +37,8 @@
                                 {{-- si estamos autenticados y el video pertenece al usuario identificado  --}}
                                 <a href="{{url("video/$video->id")}}" class="btn btn-success">Ver</a>
                             @if(Auth::check() && Auth::user()->id==$video->user->id )
-                                <a href="#" class="btn btn-warning">Editar video</a>
-                                    <a href="#" class="btn btn-danger">Eliminar</a>
+                                <a href="{{url('edit',$video->id)}}" class="btn btn-warning">Editar video</a>
+                                    <a href="{{url('/video/delete',$video->id)}}" class="btn btn-danger">Eliminar</a>
                              @endif
                         </div>
                     </div>
